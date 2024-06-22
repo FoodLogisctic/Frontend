@@ -1,0 +1,75 @@
+<body>
+  <mat-toolbar class="custom">
+    <mat-toolbar-row>
+        <div class="example-button-container">
+            <button mat-mini-fab color="" class="home" [routerLink]="'/menu'">
+              <mat-icon>home</mat-icon>
+            </button>
+          </div>
+      <span>Usuarios
+      </span>
+      <span class="example-spacer"></span>
+      <button mat-raised-button class="buton" [routerLink]="'/usuarios/listado'">Usuarios</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="container">
+  <div class="sidebar">
+    <img src="https://cdn.theforkmanager.com/static/styles/blog_article_header_image/public/wp-blog/el-tenedor-restaurante-organico-6.webp?itok=RFXTX66O" alt="image1" width="400">
+  </div>
+  <div class="content">
+<form [formGroup]="form" (submit)="aceptar()">
+    <mat-form-field class="example-full-width">
+    <mat-label>Código</mat-label>
+    <input matInput hidden placeholder="Código" formControlName="id">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+    <mat-label>Nombre</mat-label>
+    <input matInput required placeholder="Nombre" formControlName="username">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Role</mat-label>
+      <mat-select formControlName="role" [(value)]="idRolSelec" required>
+        <mat-option *ngFor="let role of lista" [value]="role.id"> 
+          {{role.rol}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Contraseña</mat-label>
+        <input matInput required placeholder="Contraseña" [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    <br>
+      <!-- Weight Column
+       <mat-form-field appearance="fill">
+        <mat-label>Rol</mat-label>
+        <input matInput required placeholder="Rol" formControlName="rolUsuario">
+        </mat-form-field>
+    <br> 
+    <mat-form-field appearance="fill">
+        <mat-label>Perecible</mat-label>
+        <mat-select formControlName="perecible">
+        <mat-option *ngFor="let medium of perecible" [value]="medium">{{medium}}</mat-option>
+        </mat-select>
+        </mat-form-field>
+    
+     <br>
+     <mat-form-field class="example-full-width">
+        <mat-label>Perecible</mat-label>
+        <input matInput required placeholder="Perecible" formControlName="perecible">
+        </mat-form-field>
+     <br>
+     -->
+    <br>
+    <button mat-raised-button type="submit" class="custom-fab2">Aceptar</button>
+    <button mat-raised-button color="" class="custom-but" routerLink="/usuarios">Cancelar</button>
+    <p>{{mensaje}}</p>
+    </form>
+  </div>
+</div>
+</body>

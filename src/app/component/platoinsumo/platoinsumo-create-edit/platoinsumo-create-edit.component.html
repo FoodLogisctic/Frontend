@@ -1,0 +1,80 @@
+<body>
+  <mat-toolbar class="custom">
+    <mat-toolbar-row>
+        <div class="example-button-container">
+            <button mat-mini-fab class="home" color="" [routerLink]="'/menu'">
+              <mat-icon>home</mat-icon>
+            </button>
+          </div>
+      <span>Compras
+      </span>
+      <span class="example-spacer"></span>
+      <button mat-raised-button class="buton" [routerLink]="'/platoInsum/listado'">Platos Lista</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="container">
+  <div class="sidebar">
+    <img src="https://blog.plazavea.com.pe/wp-content/uploads/2024/03/que-cocinar-hoy.png" alt="image1" width="400">
+  </div>
+  <div class="content">
+
+<form [formGroup]="form" (submit)="aceptar()">
+  <mat-form-field appearance="fill">
+      <mat-label>Compra</mat-label>
+      <mat-select formControlName="plato" [(value)]="idPlatoSeleccionado" required>
+        <mat-option *ngFor="let a of listaPlatos" [value]="a.id">
+          {{a.namePlato}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Insumo</mat-label>
+      <mat-select formControlName="insumo" [(value)]="idInsumoSeleccionado" required>
+        <mat-option *ngFor="let b of listaInsumos" [value]="b.id">
+          {{b.nombre}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <!--
+    <mat-form-field class="example-full-width">
+    <mat-label>Código Compra</mat-label>
+    <input matInput required placeholder="Código" formControlName="compraId">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Código Insumo</mat-label>
+      <input matInput required placeholder="Código" formControlName="insumoId">
+      </mat-form-field>
+      <br>-->
+    
+    <mat-form-field class="example-full-width">
+    <mat-label>Cantidad de insumo</mat-label>
+    <input matInput required placeholder="Cantidad" formControlName="cantidad_insumo">
+    </mat-form-field>
+    <br>
+      <!-- Weight Column 
+    <mat-form-field appearance="fill">
+        <mat-label>Perecible</mat-label>
+        <mat-select formControlName="perecible">
+        <mat-option *ngFor="let medium of perecible" [value]="medium">{{medium}}</mat-option>
+        </mat-select>
+        </mat-form-field>
+    
+     <br>
+     <mat-form-field class="example-full-width">
+        <mat-label>Perecible</mat-label>
+        <input matInput required placeholder="Perecible" formControlName="perecible">
+        </mat-form-field>
+     <br>
+     -->
+     
+    <button mat-raised-button type="submit" class="custom-fab2">Aceptar</button>
+    <button mat-raised-button color="" class="custom-but" routerLink="/platoInsum">Cancelar</button>
+    <p>{{mensaje}}</p>
+    </form>
+  </div>
+</div>
+</body>
+

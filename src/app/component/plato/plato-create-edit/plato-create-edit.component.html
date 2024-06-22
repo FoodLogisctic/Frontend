@@ -1,0 +1,64 @@
+<body>
+  <mat-toolbar class="custom">
+    <mat-toolbar-row>
+        <div class="example-button-container">
+            <button mat-mini-fab class="home" color="" [routerLink]="'/menu'">
+              <mat-icon>home</mat-icon>
+            </button>
+          </div>
+      <span>Platos
+      </span>
+      <span class="example-spacer"></span>
+      <button mat-raised-button class="buton" [routerLink]="'/platos/listado'">Platos Lista</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="container">
+    <div class="sidebar">
+      <img src="https://cdn.theforkmanager.com/static/styles/blog_article_header_image/public/wp-blog/el-tenedor-restaurante-organico-6.webp?itok=RFXTX66O" alt="image1" width="400">
+    </div>
+    <div class="content">
+
+  <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field class="example-full-width">
+      <mat-label>Código</mat-label>
+      <input matInput hidden placeholder="Código" formControlName="id">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput required placeholder="Nombre" formControlName="namePlato">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+          <mat-label>Categoria</mat-label>
+          <input matInput required placeholder="Categoria" formControlName="categoriaPlato">
+          </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+      <mat-label>Precio Plato</mat-label>
+      <input matInput required placeholder="Precio" formControlName="precio">
+      </mat-form-field>
+      <br>
+        <!-- Weight Column 
+      <mat-form-field appearance="fill">
+          <mat-label>Perecible</mat-label>
+          <mat-select formControlName="perecible">
+          <mat-option *ngFor="let medium of perecible" [value]="medium">{{medium}}</mat-option>
+          </mat-select>
+          </mat-form-field>
+      
+       <br>
+       <mat-form-field class="example-full-width">
+          <mat-label>Perecible</mat-label>
+          <input matInput required placeholder="Perecible" formControlName="perecible">
+          </mat-form-field>
+       <br>
+       -->
+      <br>
+      <button mat-raised-button type="submit" class="custom-fab2">Aceptar</button>
+      <button mat-raised-button color="" class="custom-but" routerLink="/platos">Cancelar</button>
+      <p>{{mensaje}}</p>
+      </form>
+    </div>
+  </div>
+</body>

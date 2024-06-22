@@ -1,0 +1,99 @@
+.body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  height: 90%;
+}
+
+.sidebar {
+  background-color: #fff;
+  width: 200px;
+  padding: 0px;
+}
+.sidebar img{
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.item {
+  margin-bottom: 10px;
+}
+
+.item a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.item a:hover {
+  background-color: #ddd;
+}
+
+.image-container {
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.sidebar img{
+  height: 100%;
+  object-fit: cover;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 5px;
+}
+.custom{
+  background-color: #F88E11;
+}
+.home{
+  margin: 10px;
+}
+.buton {
+  margin: 10px;
+}
+.example-button-container{
+  margin: 10px;
+}
+.custom-fab{
+  background-color: #F88E11;
+}
+.custom-fab1{
+  margin-right: 10px;
+  margin-left: 10px;
+}

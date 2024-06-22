@@ -1,0 +1,62 @@
+<body>
+  <mat-toolbar class="custom">
+    <mat-toolbar-row>
+        <div class="example-button-container">
+            <button mat-mini-fab class="home" color="" [routerLink]="'/menu'">
+              <mat-icon>home</mat-icon>
+            </button>
+          </div>
+      <span>Insumos
+      </span>
+      <span class="example-spacer"></span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="container">
+    <div class="sidebar">
+      <img src="https://blog.plazavea.com.pe/wp-content/uploads/2024/03/que-cocinar-hoy.png" alt="image1" width="500">
+    </div>
+    <div class="content">
+      <form [formGroup]="form" (submit)="aceptar()">
+        <mat-form-field class="example-full-width">
+        <mat-label>Código</mat-label>
+        <input matInput hidden placeholder="Código" formControlName="id">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput required placeholder="Nombre" formControlName="nombre">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Cantidad</mat-label>
+            <input matInput type="number" formControlName="cantidad">
+            </mat-form-field>
+            <br>
+        <mat-form-field class="example-full-width">
+        <mat-label>Tipo de insumo</mat-label>
+        <input matInput required placeholder="Tipo" formControlName="tipo">
+        </mat-form-field>
+        <br>
+         <mat-form-field class="example-full-width">
+            <mat-select placeholder="Perecible" formControlName="perecible">
+              <mat-option value='S'>Sí</mat-option>
+              <mat-option value='N'>No</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+         <mat-form-field appearance="fill">
+            <mat-label>Fecha de Vencimiento</mat-label>
+            <input matInput [matDatepicker]="endPicker" formControlName="fechaVencimiento">
+            <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+            <mat-datepicker #endPicker></mat-datepicker>
+            </mat-form-field>
+        <br>
+        <button mat-raised-button type="submit" class="custom-fab2">Aceptar</button>
+        <button mat-raised-button class="custom-but" routerLink="/insumos">Cancelar</button>
+        <p>{{mensaje}}</p>
+        </form>
+    </div>
+  
+  </div>
+</body>
+

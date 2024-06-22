@@ -1,0 +1,60 @@
+<body>
+  <mat-toolbar class="custom">
+    <mat-toolbar-row>
+      <div class="example-button-container">
+        <button mat-mini-fab class="home" color="" [routerLink]="'/menu'">
+          <mat-icon>home</mat-icon>
+        </button>
+      </div>
+      <span>Ventas
+      </span>
+      <span class="example-spacer"></span>
+      <button mat-raised-button class="buton" [routerLink]="'/ventas/listado'">Ventas</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="container">
+    <div class="sidebar">
+      <img src="https://cdn.theforkmanager.com/static/styles/blog_article_header_image/public/wp-blog/el-tenedor-restaurante-organico-6.webp?itok=RFXTX66O" alt="image1" width="400">
+    </div>
+    <div class="content">
+
+        <form [formGroup]="form" (submit)="aceptar()">
+    
+        <mat-form-field class="example-full-width">
+          <mat-label>Código</mat-label>
+      <input matInput hidden placeholder="Código" formControlName="id">
+      </mat-form-field>
+    
+        <br>
+    
+        <mat-form-field class="example-full-width">
+          <mat-label>Monto</mat-label>
+          <input matInput required placeholder="Monto" formControlName="monto">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha de Venta</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="fecha">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Mesa</mat-label>
+          <mat-select formControlName="mesa" [(value)]="idMesaSeleccionada" required>
+            <mat-option *ngFor="let mes of lista" [value]="mes.id"> 
+              {{mes.numeroMesa}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+    
+          <button mat-raised-button class="custom-fab2" (click)="aceptar()">Aceptar</button>
+    
+          <button mat-raised-button color="" class="custom-but" routerLink="/ventas">Cancelar</button>
+        <p>{{mensaje}}</p>
+        </form>
+    </div>
+  </div>
+</body>
